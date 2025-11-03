@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>SheVolunteers – Frauen stärken Frauen weltweit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -64,26 +65,29 @@
 
     .submenu {
       display: none;
-      position: static;
+      flex-direction: column;
       background: white;
       list-style: none;
-      padding-left: 15px;
-      margin: 5px 0;
+      padding: 0;
+      margin: 0;
     }
 
     .submenu li a {
-      font-size: 16px;
-      font-weight: 500;
-      color: #555;
-      padding: 5px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      padding: 16px 25px;
+      display: block;
+      text-decoration: none;
     }
 
     .submenu li a:hover {
       color: #E07BAE;
+      background-color: #fafafa;
     }
 
     .dropdown.active .submenu {
-      display: block;
+      display: flex;
     }
 
     /* --- HAMBURGER BUTTON --- */
@@ -229,6 +233,11 @@
         font-size: 20px;
       }
 
+      .submenu li a {
+        padding-left: 25px;
+        font-size: 20px;
+      }
+
       .menu-toggle {
         display: flex;
       }
@@ -273,7 +282,7 @@
           <ul class="submenu">
             <li><a href="blog.html">Blog</a></li>
             <li><a href="whatsapp.html">WhatsApp</a></li>
-            <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
+            <li><a href="https://www.instagram.com/shevolunteers.de?igsh=MXVhb21kYmh3bDB2Zg==" target="_blank">Instagram</a></li>
             <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
           </ul>
         </li>
@@ -291,7 +300,7 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO-BEREICH -->
   <section class="hero">
     <h1>Willkommen bei SheVolunteers</h1>
     <p>Eine Community von Frauen, die Frauen weltweit auf ihrem Weg ins Ausland begleiten, unterstützen und inspirieren.</p>
@@ -313,18 +322,20 @@
 
     menuToggle.addEventListener('click', () => {
       menu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
     });
 
-    dropdowns.forEach(drop => {
-      drop.addEventListener('click', (e) => {
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', (e) => {
         e.preventDefault();
-        drop.parentElement.classList.toggle('active');
+        dropdown.parentElement.classList.toggle('active');
       });
     });
   </script>
 
 </body>
 </html>
+
 
 
 
