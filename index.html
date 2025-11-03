@@ -41,53 +41,15 @@
       padding: 0;
     }
 
-    nav ul li {
-      position: relative;
-    }
-
     nav ul li a {
       text-decoration: none;
       color: #333;
       font-weight: 600;
       font-size: 18px;
-      display: block;
     }
 
     nav ul li a:hover {
       color: #E07BAE;
-    }
-
-    /* --- DROPDOWN --- */
-    .dropdown > a::after {
-      content: " ▼";
-      font-size: 12px;
-    }
-
-    .submenu {
-      display: none;
-      flex-direction: column;
-      background: white;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .submenu li a {
-      font-size: 18px;
-      font-weight: 600;
-      color: #333;
-      padding: 16px 25px;
-      display: block;
-      text-decoration: none;
-    }
-
-    .submenu li a:hover {
-      color: #E07BAE;
-      background-color: #fafafa;
-    }
-
-    .dropdown.active .submenu {
-      display: flex;
     }
 
     /* --- HAMBURGER BUTTON --- */
@@ -95,8 +57,8 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
-      width: 25px;
-      height: 20px;
+      width: 28px;
+      height: 22px;
       justify-content: space-between;
     }
 
@@ -160,6 +122,7 @@
       border-radius: 50px;
       font-size: 18px;
       font-weight: bold;
+      position: relative;
       transition: all 0.3s ease;
     }
 
@@ -185,13 +148,57 @@
     /* --- FOOTER --- */
     footer {
       background-color: #f9f9f9;
-      padding: 40px 20px;
+      padding: 60px 100px 30px;
       color: #333;
       border-top: 1px solid #eee;
-      text-align: center;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-logo img {
+      width: 180px;
+      height: auto;
+    }
+
+    .footer-column h4 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #E07BAE;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #b8528d;
     }
 
     .footer-bottom {
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
       font-size: 14px;
       color: #777;
     }
@@ -209,6 +216,7 @@
         width: 160px;
       }
 
+      /* Menü versteckt standardmäßig */
       nav ul {
         flex-direction: column;
         gap: 0;
@@ -218,24 +226,22 @@
         position: absolute;
         top: 70px;
         left: 0;
-        padding: 10px 0;
+        padding: 15px 0;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         z-index: 99;
       }
 
+      /* Sichtbar, wenn geöffnet */
       nav ul.active {
         display: flex;
       }
 
       nav ul li a {
-        padding: 16px 25px;
+        display: block;
+        padding: 15px 20px;
         border-top: 1px solid #eee;
         font-size: 20px;
-      }
-
-      .submenu li a {
-        padding-left: 25px;
-        font-size: 20px;
+        text-align: center;
       }
 
       .menu-toggle {
@@ -253,6 +259,36 @@
       .hero p {
         font-size: 18px;
       }
+
+      .hero a.button {
+        font-size: 16px;
+        padding: 12px 30px;
+      }
+
+      footer {
+        padding: 30px 20px;
+      }
+
+      /* Footer stark vereinfacht für Handy */
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-logo {
+        margin-bottom: 20px;
+      }
+
+      .footer-column {
+        display: none; /* Footer-Links ausblenden, da sie über Menü erreichbar sind */
+      }
+
+      .footer-bottom {
+        font-size: 13px;
+        color: #999;
+      }
     }
   </style>
 </head>
@@ -264,6 +300,7 @@
     <div class="logo">
       <a href="index.html"><img src="bilder/LOGO.111.png" alt="SheVolunteers Logo"></a>
     </div>
+
     <div class="menu-toggle" id="menu-toggle">
       <div></div>
       <div></div>
@@ -276,26 +313,12 @@
         <li><a href="überuns.html">Über uns</a></li>
         <li><a href="ehrenamt.html">Engagement</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
-
-        <li class="dropdown">
-          <a href="#">Angebot</a>
-          <ul class="submenu">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="whatsapp.html">WhatsApp</a></li>
-            <li><a href="https://www.instagram.com/shevolunteers.de?igsh=MXVhb21kYmh3bDB2Zg==" target="_blank">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
-          </ul>
-        </li>
-
-        <li><a href="warumshevolunteers.html">Warum SheVolunteers?</a></li>
-
-        <li class="dropdown">
-          <a href="#">Rechtliches</a>
-          <ul class="submenu">
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
-          </ul>
-        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="whatsapp.html">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
       </ul>
     </nav>
   </header>
@@ -309,32 +332,60 @@
 
   <!-- FOOTER -->
   <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="bilder/LOGO.111.png" alt="SheVolunteers Logo">
+      </div>
+
+      <div class="footer-column">
+        <h4>Angebot</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="whatsapp.html">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/shevolunteers.de">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/she-volunteers-community/">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>SheVolunteers</h4>
+        <ul>
+          <li><a href="überuns.html">Über uns</a></li>
+          <li><a href="warumshevolunteers.html">Warum SheVolunteers?</a></li>
+          <li><a href="ehrenamt.html">Engagement</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <p>Website made with ♥ by SheVolunteers Team</p>
       <p>© 2025 SheVolunteers. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
 
+  <!-- MENU SCRIPT -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-    const dropdowns = document.querySelectorAll('.dropdown > a');
 
     menuToggle.addEventListener('click', () => {
       menu.classList.toggle('active');
       menuToggle.classList.toggle('open');
     });
-
-    dropdowns.forEach(dropdown => {
-      dropdown.addEventListener('click', (e) => {
-        e.preventDefault();
-        dropdown.parentElement.classList.toggle('active');
-      });
-    });
   </script>
 
 </body>
 </html>
+
 
 
 
