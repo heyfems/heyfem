@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Über uns – SheVolunteers</title>
+
+    <link rel="icon" href="bilder/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="bilder/favicon.png">
+<meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
+<meta property="og:title" content="SheVolunteers – Frauen stärken Frauen">
+<meta property="og:description" content="Eine Community von Frauen, die sich gegenseitig inspirieren und unterstützen.">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -125,12 +132,8 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
-      padding-top: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #777;
+        font-size: 12px;
+        margin-top: 20px;
     }
   </style>
 </head>
@@ -189,45 +192,147 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="bilder/LOGO.111.png" alt="SheVolunteers Logo">
-      </div>
-
-      <div class="footer-column">
-        <h4>Angebot</h4>
-        <ul>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="whatsapp.html">WhatsApp</a></li>
-          <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>SheVolunteers</h4>
-        <ul>
-          <li><a href="überuns.html">Über uns</a></li>
-          <li><a href="warumshevolunteers.html">Warum SheVolunteers?</a></li>
-          <li><a href="ehrenamt.html">Engagement</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>Rechtliches</h4>
-        <ul>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
-        </ul>
-      </div>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="bilder/LOGO.111.png" alt="SheVolunteers Logo">
     </div>
 
-    <div class="footer-bottom">
-      <p>Website made with ♥ by SheVolunteers Team</p>
-      <p>© 2025 SheVolunteers. Alle Rechte vorbehalten.</p>
+    <div class="footer-column">
+      <h4>Angebot</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="whatsapp.html">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <div class="footer-column">
+      <h4>SheVolunteers</h4>
+      <ul>
+        <li><a href="überuns.html">Über uns</a></li>
+        <li><a href="warumshevolunteers.html">Warum SheVolunteers?</a></li>
+        <li><a href="ehrenamt.html">Engagement</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Website made with ♥ by SheVolunteers Team</p>
+    <p>© 2025 SheVolunteers. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: #fff;
+    padding: 50px 80px 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    border-top: 1px solid #eee;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-logo img {
+    width: 150px;
+    height: auto;
+    opacity: 0.9;
+  }
+
+  .footer-column h4 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #E07BAE;
+    font-size: 15px;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #b8528d;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+  }
+
+  /* --- Mobile Anpassung --- */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .footer-logo {
+      grid-column: span 2;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      width: 120px;
+    }
+
+    .footer-bottom {
+      font-size: 12px;
+      margin-top: 25px;
+      line-height: 1.4;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-column {
+      margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+      font-size: 12px;
+    }
+  }
+</style>
+
 
 </body>
 </html>

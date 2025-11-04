@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <title>Unsere WhatsApp-Community – SheVolunteers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="bilder/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="bilder/favicon.png">
+  <meta property="og:title" content="SheVolunteers – Frauen stärken Frauen">
+  <meta property="og:description" content="Eine Community von Frauen, die sich gegenseitig inspirieren und unterstützen.">
+  <meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: #fff8fb;
       color: #333;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
     }
 
     /* HEADER */
@@ -51,7 +56,7 @@
 
     /* INHALT */
     main {
-      max-width: 800px;
+      max-width: 1100px;
       margin: 80px auto;
       background: white;
       padding: 60px;
@@ -61,14 +66,77 @@
 
     h1 {
       text-align: center;
-      color: #E07BAE;
+      color: #000;
       font-size: 36px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    p {
+    .subtitle {
+      text-align: center;
       font-size: 18px;
-      margin-bottom: 20px;
+      color: #777;
+      margin-bottom: 60px;
+    }
+
+    .community-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .community-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .community-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .community-info {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background-color: #fff2f8;
+      border-radius: 20px;
+      padding: 20px 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .info-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .info-icon {
+      font-size: 28px;
+      color: #E07BAE;
+      flex-shrink: 0;
+    }
+
+    .info-text h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      color: #000;
+    }
+
+    .info-text p {
+      margin: 0;
+      color: #555;
+      font-size: 16px;
     }
 
     a.button {
@@ -81,6 +149,7 @@
       font-size: 18px;
       font-weight: bold;
       transition: all 0.3s ease;
+      margin-top: 50px;
       text-align: center;
     }
 
@@ -88,6 +157,19 @@
       background-color: white;
       color: #E07BAE;
       border: 2px solid #E07BAE;
+    }
+
+    /* BILD UNTEN */
+    .eyecatcher {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .eyecatcher img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     /* FOOTER */
@@ -148,6 +230,32 @@
       font-size: 14px;
       color: #777;
     }
+
+    @media (max-width: 900px) {
+      .community-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .community-info {
+        width: 100%;
+      }
+
+      footer {
+        padding: 40px 20px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -170,24 +278,52 @@
   <!-- INHALT -->
   <main>
     <h1>Unsere WhatsApp-Community</h1>
+    <p class="subtitle">Austausch, Unterstützung und Inspiration unter Frauen weltweit</p>
 
-    <p>
-      In unserer <strong>SheVolunteers WhatsApp-Community</strong> bist du Teil eines lebendigen Netzwerks aus Frauen, 
-      die sich gegenseitig auf ihrem Weg ins Ausland unterstützen. Hier tauschen wir uns über Erfahrungen aus, 
-      teilen Tipps und beantworten Fragen rund ums Reisen, Arbeiten oder Leben im Ausland.
-    </p>
+    <div class="community-section">
+      <div class="community-image">
+        <img src="bilder/whatsapplogo.jpg" alt="SheVolunteers WhatsApp Community">
+      </div>
 
-    <p>
-      💬 <strong>Wie kommst du in die WhatsApp-Gruppe?</strong><br>
-      Wenn du Teil der SheVolunteers-Community wirst – zum Beispiel über dein Engagement oder deine Anmeldung über unser Formular – 
-      erhältst du automatisch eine Einladung zur WhatsApp-Gruppe.
-    </p>
+      <div class="community-info">
+        <div class="info-card">
+          <div class="info-icon">💬</div>
+          <div class="info-text">
+            <h3>Gemeinschaft & Austausch</h3>
+            <p>Ein Netzwerk aus Frauen, die sich gegenseitig auf ihrem Weg ins Ausland unterstützen.</p>
+          </div>
+        </div>
 
-    <p>
-      Wenn du vorab Fragen hast oder dich direkt für die Community interessierst, schreib uns einfach:
-    </p>
+        <div class="info-card">
+          <div class="info-icon">💡</div>
+          <div class="info-text">
+            <h3>Fragen & Antworten</h3>
+            <p>Tipps, Erfahrungen und Antworten rund ums Reisen, Arbeiten oder Leben im Ausland.</p>
+          </div>
+        </div>
 
-    <a href="kontakt.html" class="button">Schreib uns</a>
+        <div class="info-card">
+          <div class="info-icon">🌍</div>
+          <div class="info-text">
+            <h3>So kommst du rein</h3>
+            <p>Nach deiner Anmeldung oder deinem Engagement erhältst du automatisch die Einladung zur WhatsApp-Gruppe.</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">🤍</div>
+          <div class="info-text">
+            <h3>Vertraulichkeit</h3>
+            <p>Persönliche Fragen werden auf Wunsch anonym weitergeleitet – Privatsphäre bleibt gewahrt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="kontakt.html" class="button">Schreib uns</a>
+    </div>
+
   </main>
 
   <!-- FOOTER -->
@@ -231,7 +367,11 @@
       <p>© 2025 SheVolunteers. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
-
 </body>
 </html>
+
+
+
+
+
 
