@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kein Gym? Kein Problem! Mein Fitness-Geheimnis im Ausland | SheVolunteers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 10px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo img {
+      width: 200px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      color: #E07BAE;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 60px auto;
+      background: white;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #000;
+      font-size: 34px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Inhaltsverzeichnis - aufklappbar */
+    details.toc {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      padding: 10px 20px;
+      font-size: 17px;
+    }
+
+   summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 0;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "▾";
+  font-size: 18px;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+
+    summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "▾";
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+
+    details.toc[open] {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .toc ul {
+      list-style-type: decimal;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .toc ul li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .toc a:hover {
+      color: #E07BAE;
+    }
+
+    h2 {
+      color: #000;
+      margin-top: 40px;
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    a {
+      color: #E07BAE;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #f9f9f9;
+      padding: 60px 100px 30px;
+      color: #333;
+      border-top: 1px solid #eee;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-logo img {
+      width: 180px;
+      height: auto;
+    }
+
+    .footer-column h4 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #E07BAE;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #b8528d;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      main { padding: 30px; }
+      .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
+    }
+
+    /* Minimalistischer schwarzer Pfeil rechts neben "Inhalt" */
+summary::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+details[open] summary::after {
+  transform: rotate(-135deg);
+}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="bilder/LOGO.111.png" alt="SheVolunteers Logo"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="überuns.html">Über uns</a></li>
+        <li><a href="ehrenamt.html">Engagement</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BLOG-INHALT -->
+  <main>
+    <h1>Kein Gym? Kein Problem! Mein Fitness-Geheimnis im Ausland</h1>
+
+    <details class="toc" open>
+      <summary>Inhalt</summary>
+      <ul>
+        <li><a href="#fitnessstudios">Gibt es überhaupt Fitnessstudios in Costa Rica?</a></li>
+        <li><a href="#braucheich">Brauche ich ein Fitnessstudio, um fit zu bleiben?</a></li>
+        <li><a href="#kein-gym">Und was, wenn kein Gym in Sicht oder zu teuer ist?</a></li>
+        <li><a href="#pilates">Warum Pilates und Yoga total unterschätzt werden</a></li>
+        <li><a href="#start">Wie startet man am besten?</a></li>
+        <li><a href="#wie-viel">Wie viel Training ist genug?</a></li>
+        <li><a href="#lustlos">Was tun, wenn ich mal gar keine Lust auf Videos habe?</a></li>
+      </ul>
+    </details>
+
+    <h2 id="fitnessstudios">Gibt es überhaupt Fitnessstudios in Costa Rica?</h2>
+    <p>
+      Ich lebe aktuell in Costa Rica und hier gibt es zwar einige Fitnessstudios in der Nähe, aber das ist nicht überall so. 
+      Je nachdem, wo man gerade wohnt, kann es gut sein, dass es gar kein Gym gibt – oder nur welche, die richtig teuer sind.
+    </p>
+
+    <h2 id="braucheich">Brauche ich ein Fitnessstudio, um fit zu bleiben?</h2>
+    <p>
+      Momentan bin ich selbst in keinem Fitnessstudio angemeldet, weil ich völlig zufrieden bin mit meinen YouTube-Workouts – 
+      vor allem mit den Videos von <a href="https://www.youtube.com/@MoveWithNicole" target="_blank"><strong>Move with Nicole</strong></a>. 
+      Das Schöne daran ist, dass man super flexibel bleibt: Ich kann jederzeit und überall trainieren. 
+      Mit der Zeit habe ich viele ihrer Übungen und Bewegungen sogar auswendig gelernt – manchmal brauche ich also gar kein Video mehr. 
+      Besonders die Dehnübungen tun mir richtig gut. Und ich habe gelernt: Es geht gar nicht so sehr um die Intensität des Trainings, 
+      sondern um die Konsistenz – also einfach dranbleiben und regelmäßig etwas für den Körper tun.
+    </p>
+
+    <h2 id="kein-gym">Und was, wenn kein Gym in Sicht oder zu teuer ist?</h2>
+    <p>
+      Aber es gab auch Zeiten, da war das ganz anders – entweder gab es keine Gyms in meiner Nähe oder sie waren einfach zu teuer! 
+      Anfangs dachte ich: „Oh nein, wie soll ich jetzt fit bleiben?“ Aber genau da habe ich eine neue Routine für mich entdeckt.
+    </p>
+
+    <h2 id="pilates">Warum Pilates und Yoga total unterschätzt werden</h2>
+    <p>
+      Über YouTube bin ich auf <a href="https://www.youtube.com/@MoveWithNicole" target="_blank"><strong>Move with Nicole</strong></a> gestoßen – 
+      sie bietet tolle Pilates- und Yoga-Videos an. Und ganz ehrlich: Viele unterschätzen Pilates total! 
+      Nur weil man keine Gewichte stemmt, heißt das nicht, dass es weniger effektiv ist. 
+      Im Gegenteil: Ich habe gemerkt, wie gut mir diese sanftere, aber trotzdem fordernde Art des Trainings tut. 
+      Mein Körper wurde stärker, beweglicher und ausgeglichener.
+    </p>
+
+    <h2 id="start">Wie startet man am besten?</h2>
+    <p>
+      Das Beste daran? Es ist super einfach! Man braucht nichts außer einer Matte und Internet. 
+      Ich habe damals mit kurzen Videos angefangen – so 10 bis 15 Minuten – und mich langsam gesteigert. 
+      Das ist mein Tipp für alle: <strong>Klein anfangen!</strong> Wenn man gleich ein einstündiges Workout plant, 
+      ist die Motivation oft schneller weg, als man denkt.
+    </p>
+
+    <h2 id="wie-viel">Wie viel Training ist genug?</h2>
+    <p>
+      Heute mache ich’s nach Gefühl: An manchen Tagen nur 10 Minuten, wenn ich müde bin, 
+      und an anderen Tagen auch mal 25 Minuten, wenn ich richtig Lust habe. 
+      Es gibt keine Regeln – Hauptsache, man bleibt in Bewegung.
+    </p>
+
+    <h2 id="lustlos">Was tun, wenn ich mal gar keine Lust auf Videos habe?</h2>
+    <p>
+      Dann gehe ich einfach spazieren, laufe meine 10.000 Schritte oder tanze zu meiner Lieblingsmusik durch die Wohnung. 
+      Bewegung muss nicht immer streng oder perfekt sein – Hauptsache, sie macht Spaß!
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="bilder/LOGO.111.png" alt="SheVolunteers Logo">
+      </div>
+
+      <div class="footer-column">
+        <h4>Angebot</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="whatsapp.html">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>SheVolunteers</h4>
+        <ul>
+          <li><a href="überuns.html">Über uns</a></li>
+          <li><a href="warumshevolunteers.html">Warum SheVolunteers?</a></li>
+          <li><a href="ehrenamt.html">Engagement</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Website made with ♥ by SheVolunteers Team</p>
+      <p>© 2025 SheVolunteers. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

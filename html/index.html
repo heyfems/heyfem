@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>SheVolunteers – Frauen stärken Frauen weltweit</title>
+
+  <link rel="icon" href="bilder/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="bilder/favicon.png">
+<meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
+<meta property="og:title" content="SheVolunteers – Frauen stärken Frauen">
+<meta property="og:description" content="Entdecke SheVolunteers: Eine Community von Frauen, die sich gegenseitig inspirieren und unterstützen.">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -67,7 +74,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.45); /* dunkler Overlay für Lesbarkeit */
+      background: rgba(0, 0, 0, 0.45);
       z-index: 1;
     }
 
@@ -180,6 +187,86 @@
       font-size: 14px;
       color: #777;
     }
+
+    /* --- MOBILE ANPASSUNGEN --- */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+
+      .logo img {
+        width: 160px;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+        border-top: 1px solid #eee;
+      }
+
+      .hero {
+        padding: 100px 20px;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+
+      .hero a.button {
+        padding: 12px 25px;
+        font-size: 16px;
+      }
+
+      footer {
+        padding: 40px 20px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-logo {
+        text-align: center;
+      }
+
+      .footer-logo img {
+        width: 150px;
+      }
+
+      .footer-column h4 {
+        text-align: center;
+      }
+
+      .footer-column ul {
+        text-align: center;
+      }
+
+      .footer-bottom {
+        font-size: 12px;
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -251,6 +338,12 @@
 
 </body>
 </html>
+
+
+
+
+
+
 
 
 
