@@ -139,8 +139,11 @@
       font-size: 16px;
     }
 
+    /* BUTTON */
     a.button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background-color: #E07BAE;
       color: white;
       text-decoration: none;
@@ -151,12 +154,24 @@
       transition: all 0.3s ease;
       margin-top: 50px;
       text-align: center;
+      border: 2px solid transparent;
     }
 
     a.button:hover {
       background-color: white;
       color: #E07BAE;
       border: 2px solid #E07BAE;
+    }
+
+    .button .arrow {
+      margin-left: 10px;
+      transition: transform 0.3s ease, fill 0.3s ease;
+      fill: white;
+    }
+
+    a.button:hover .arrow {
+      transform: translateX(6px);
+      fill: #E07BAE; /* Pfeil wird rosa sichtbar auf weißem Hintergrund */
     }
 
     /* BILD UNTEN */
@@ -314,14 +329,20 @@
           <div class="info-icon">🤍</div>
           <div class="info-text">
             <h3>Vertraulichkeit</h3>
-            <p>Persönliche Fragen werden auf Wunsch anonym weitergeleitet – Privatsphäre bleibt gewahrt.</p>
+            <p>Persönliche Fragen werden auf Wunsch anonym in die Gruppe weitergeleitet – Privatsphäre bleibt gewahrt.</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- BUTTON MIT DYNAMISCHER PFEILFARBE -->
     <div style="text-align:center;">
-      <a href="kontakt.html" class="button">Schreib uns</a>
+      <a href="kontakt.html" class="button">
+        Werde Teil der Community
+        <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path d="M9.29 6.71a1 1 0 0 1 1.42 0L16 12l-5.29 5.29a1 1 0 1 1-1.42-1.42L13.17 12 9.29 8.12a1 1 0 0 1 0-1.41z"/>
+        </svg>
+      </a>
     </div>
 
   </main>
@@ -369,6 +390,8 @@
   </footer>
 </body>
 </html>
+
+
 
 
 
