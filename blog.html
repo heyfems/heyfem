@@ -6,10 +6,10 @@
   <title>Blogs | SheVolunteers</title>
 
   <link rel="icon" href="bilder/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="bilder/favicon.png">
-<meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
-<meta property="og:title" content="SheVolunteers – Frauen stärken Frauen">
-<meta property="og:description" content="Eine Community von Frauen, die sich gegenseitig inspirieren und unterstützen.">
+  <link rel="apple-touch-icon" href="bilder/favicon.png">
+  <meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
+  <meta property="og:title" content="SheVolunteers – Frauen stärken Frauen">
+  <meta property="og:description" content="Eine Community von Frauen, die sich gegenseitig inspirieren und unterstützen.">
 
   <style>
     body {
@@ -61,10 +61,44 @@
     h1.blog-heading {
       font-size: 48px;
       font-weight: 700;
-      margin: 80px auto 60px;
+      margin: 80px auto 20px;
       text-align: left;
       width: 85%;
       max-width: 1200px;
+    }
+
+    /* SUCHLEISTE */
+    .search-container {
+      width: 85%;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      display: flex;
+      align-items: center;
+      background-color: #f3f4f5;
+      border-radius: 50px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+    }
+
+    .search-container svg {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+
+    .search-container input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      outline: none;
+      color: #333;
+    }
+
+    .search-container input::placeholder {
+      color: #888;
     }
 
     /* BLOG-GRID */
@@ -205,7 +239,17 @@
   <main>
     <h1 class="blog-heading">Blog</h1>
 
-    <section class="blog-grid">
+    <!-- SUCHLEISTE -->
+    <div class="search-container">
+      <!-- Suchsymbol (SVG) -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <input type="text" id="blogSearch" placeholder="Suche..." onkeyup="searchBlogs()">
+    </div>
+
+    <section class="blog-grid" id="blogGrid">
       <a href="blog1.html" class="blog-card">
         <img src="bilder/blog1.jpg" alt="Blogbeitrag 1">
         <div class="blog-info">
@@ -282,8 +326,20 @@
     </div>
   </footer>
 
+  <script>
+    function searchBlogs() {
+      const input = document.getElementById('blogSearch').value.toLowerCase();
+      const blogs = document.querySelectorAll('.blog-card');
+      blogs.forEach(blog => {
+        const title = blog.querySelector('.blog-title').textContent.toLowerCase();
+        blog.style.display = title.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+
 </body>
 </html>
+
 
 
 
