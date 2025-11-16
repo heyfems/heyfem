@@ -472,7 +472,7 @@
   text-align: left;
   position: relative;
   margin-bottom: 5px !important;
-  padding-top: 130px !important;
+  padding-top: 80px !important;
   padding-bottom: 20px !important; /* kleiner machen */
 }
 
@@ -511,18 +511,15 @@
   margin-top: 5px; /* etwas Abstand oben */
 }
 
+.modal-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .modal-text-block p {
   margin: 5px 0 0 0;
-}
-
-.modal-emoji {
-  text-align: center;
-  margin-bottom: 20px; /* Abstand zum Titel */
-}
-
-.modal-emoji img {
-  width: 120px;   /* Größe anpassen */
-  height: auto;
 }
 
 .modal-title {
@@ -542,12 +539,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 30px;
-  margin: 40px 0 30px;
+  margin: 30px 0 10px;
 }
 
 .modal-button-wrapper {
   text-align: center;  /* zentriert NUR den Button */
-  margin-top: 20px;
+  margin-top: 10px;
+  padding-bottom: 40px;    /* Abstand nach unten (GLEICH für alle Modals!) */
 }
 
 .modal-button {
@@ -560,6 +558,15 @@
   font-weight: 600;
   text-decoration: none;
   margin-top: 20px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-text-grid {
+  flex-grow: 1;
 }
   </style>
 </head>
@@ -609,37 +616,41 @@
   <div class="modal-content">
     <span class="modal-close" onclick="closeModal()">&times;</span>
 
-  <div class="modal-emoji">
-  <img src="bilder/dein-bild.png" alt="">
-</div>
-
     <h2 class="modal-title">Stories aus der Community</h2>
     <p class="modal-text">Entdecke Tipps und Geschichten anderer Frauen zu Gesundheit, Menstruation und Alltag.</p>
 
     <div class="modal-text-grid">
       <div class="modal-text-block">
-        <div class="modal-circle"></div>
+        <div class="modal-circle">
+          <img src="stories-beispiel1.jpg" alt="">
+        </div>
         <div>
           <strong>Persönliche Erlebnisse</strong>
           <p>Inspiration aus dem Alltag anderer Frauen.</p>
         </div>
       </div>
       <div class="modal-text-block">
-        <div class="modal-circle"></div>
+        <div class="modal-circle">
+          <img src="stories-beispiel2.jpg" alt="">
+        </div>
         <div>
           <strong>Tipps für den Alltag</strong>
           <p>Praktische Ratschläge zu Selbstfürsorge, Anti-Stress und Wohlbefinden.</p>
         </div>
       </div>
       <div class="modal-text-block">
-        <div class="modal-circle"></div>
+        <div class="modal-circle">
+          <img src="stories-beispiel3.jpg" alt="">
+        </div>
         <div>
           <strong>Frauengesundheit & Menstruation</strong>
           <p>Erfahrungsaustausch zu Zyklus, Körperbewusstsein & mehr.</p>
         </div>
       </div>
       <div class="modal-text-block">
-        <div class="modal-circle"></div>
+        <div class="modal-circle">
+          <img src="stories-beispiel4.jpg" alt="">
+        </div>
         <div>
           <strong>Gemeinschaft & Unterstützung</strong>
           <p>Finde Frauen, die ähnliche Wege gehen.</p>
@@ -650,7 +661,301 @@
     <div class="modal-button-wrapper">
   <a href="#" class="modal-button">Jetzt entdecken</a>
 </div>
+
   </div>
+</div>
+
+<!-- Podcast Modal -->
+<div id="modal-podcast" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+
+    <h2 class="modal-title">Podcast hören</h2>
+    <p class="modal-text">Inspirierende Gespräche über Körper, Gesundheit & Female Empowerment.</p>
+
+    <div class="modal-text-grid">
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="pod1.jpg" alt="">
+        </div>
+        <div>
+          <strong>Aktuelle Folge</strong>
+          <p>Spannende Insights zu Frauengesundheit & Mental Health.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="pod2.jpg" alt="">
+        </div>
+        <div>
+          <strong>Expertinnen-Talks</strong>
+          <p>Wissen direkt von Ärztinnen, Coaches & Gründerinnen.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="pod3.jpg" alt="">
+        </div>
+        <div>
+          <strong>Community-Themen</strong>
+          <p>Wir sprechen über Themen, die euch wirklich bewegen.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="pod4.jpg" alt="">
+        </div>
+        <div>
+          <strong>Fun & Real Talk</strong>
+          <p>Ehrliche Gespräche – humorvoll, offen & ohne Tabus.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-button-wrapper">
+      <a href="#" class="modal-button">Jetzt anhören</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Deine Story teilen Modal -->
+<div id="modal-teilen" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+
+    <h2 class="modal-title">Deine Story teilen</h2>
+    <p class="modal-text">Erzähle deine Erfahrungen und hilf anderen Frauen mit deinen Insights & deiner Geschichte.</p>
+
+    <div class="modal-text-grid">
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="teilen1.jpg" alt="">
+        </div>
+        <div>
+          <strong>Deine Erfahrung zählt</strong>
+          <p>Teile Momente, die dich geprägt haben.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="teilen2.jpg" alt="">
+        </div>
+        <div>
+          <strong>Mut machen</strong>
+          <p>Inspiriere andere Frauen mit deiner Geschichte.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="teilen3.jpg" alt="">
+        </div>
+        <div>
+          <strong>Community stärken</strong>
+          <p>Gemeinsam schaffen wir mehr Offenheit & Support.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="teilen4.jpg" alt="">
+        </div>
+        <div>
+          <strong>Anonym möglich</strong>
+          <p>Teile so viel du möchtest – auch anonym.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-button-wrapper">
+      <a href="#" class="modal-button">Jetzt teilen</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Community Modal -->
+<div id="modal-community" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+
+    <h2 class="modal-title">Zur Community</h2>
+    <p class="modal-text">Tritt unserer Community bei und verbinde dich mit Frauen weltweit – für Austausch, Support & Empowerment.</p>
+
+    <div class="modal-text-grid">
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="community1.jpg" alt="">
+        </div>
+        <div>
+          <strong>Austausch auf Augenhöhe</strong>
+          <p>Teile Erfahrungen & bekomme ehrlichen Support.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="community2.jpg" alt="">
+        </div>
+        <div>
+          <strong>Weltweit vernetzt</strong>
+          <p>Lerne Frauen aus verschiedenen Ländern kennen.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="community3.jpg" alt="">
+        </div>
+        <div>
+          <strong>Themen, die bewegen</strong>
+          <p>Von Zyklus & Gesundheit bis Alltag & Mental Health.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="community4.jpg" alt="">
+        </div>
+        <div>
+          <strong>Sicherer Raum</strong>
+          <p>Eine positive Umgebung – wertschätzend & respektvoll.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-button-wrapper">
+      <a href="#" class="modal-button">Community beitreten</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Engagieren Modal -->
+<div id="modal-engagieren" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+
+    <h2 class="modal-title">Engagieren</h2>
+    <p class="modal-text">Werde aktiv und unterstütze unsere Mission für Aufklärung, Female Empowerment & eine starke Community.</p>
+
+    <div class="modal-text-grid">
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="engagieren1.jpg" alt="">
+        </div>
+        <div>
+          <strong>Mithelfen & Mitgestalten</strong>
+          <p>Bringe deine Ideen ein und wirke an Projekten mit.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="engagieren2.jpg" alt="">
+        </div>
+        <div>
+          <strong>Freiwilliges Engagement</strong>
+          <p>Unterstütze Events, Workshops & Community-Aktionen.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="engagieren3.jpg" alt="">
+        </div>
+        <div>
+          <strong>Expertinnen willkommen</strong>
+          <p>Teile Wissen zu Gesundheit, Zyklus, Mental Health & mehr.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="engagieren4.jpg" alt="">
+        </div>
+        <div>
+          <strong>Impact schaffen</strong>
+          <p>Gemeinsam bewegen wir etwas für Mädchen & Frauen.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-button-wrapper">
+      <a href="#" class="modal-button">Jetzt engagieren</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Socials Modal -->
+<div id="modal-socials" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+
+    <h2 class="modal-title">Mit uns connecten</h2>
+    <p class="modal-text">Bleib auf dem Laufenden, werde Teil der Community und connecte dich mit uns auf allen Kanälen.</p>
+
+    <div class="modal-text-grid">
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="socials1.jpg" alt="">
+        </div>
+        <div>
+          <strong>Instagram</strong>
+          <p>Updates, Infos & Frauenstories aus der Community.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="socials2.jpg" alt="">
+        </div>
+        <div>
+          <strong>Podcast</strong>
+          <p>Spannende Gespräche über Zyklus, Körper & Empowerment.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="socials3.jpg" alt="">
+        </div>
+        <div>
+          <strong>Newsletter</strong>
+          <p>Monatliche Inspiration & Updates rund um Female Health.</p>
+        </div>
+      </div>
+
+      <div class="modal-text-block">
+        <div class="modal-circle">
+          <img src="socials4.jpg" alt="">
+        </div>
+        <div>
+          <strong>Community-Plattform</strong>
+          <p>Triff Frauen weltweit – Austausch auf Augenhöhe.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-button-wrapper">
+      <a href="#" class="modal-button">Jetzt verbinden</a>
+    </div>
+
+  </div>
 </div>
 </section>
 
