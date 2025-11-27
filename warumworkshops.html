@@ -2,32 +2,34 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Kontakt – Behind My Profile</title>
+  <title>Warum diese Workshops?</title>
 
-    <link rel="icon" href="bilder/heyfem.logos1.png" type="image/png">
-<link rel="apple-touch-icon" href="bilder/heyfem.logos1.png">
-<meta property="og:image" content="https://www.heyfem.org/bilder/heyfem.logos1.png">
-<meta property="og:title" content="Behind My Profile – Mädchen stärken. Zukunft stärken.">
-<meta property="og:description" content="Eine Initiative für Prävention, Bildung und Empowerment.">
+  <link rel="icon" href="bilder/heyfem.logos1.png" type="image/png">
+  <link rel="apple-touch-icon" href="bilder/heyfem.logos1.png">
+  <meta property="og:image" content="https://www.heyfem.org/bilder/heyfem.logos1.png">
+  <meta property="og:title" content="heyfem! – Mädchen stärken. Zukunft stärken.">
+  <meta property="og:description" content="Eine Initiative für Prävention, Bildung und Empowerment.">
 
   <style>
-    html, body {
+    body {
+      font-family: Aperçu, sans-serif;
       margin: 0;
       padding: 0;
-      width: 100%;
-      height: 100%;
-      font-family: Aperçu, sans-serif;
       color: #333;
+      background-color: #fff;
+      line-height: 1.6;
     }
 
-    /* HEADER */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: white;
-      padding: 8px 40px;
+      padding: 10px 40px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo img {
@@ -47,86 +49,43 @@
       text-decoration: none;
       color: #333;
       font-weight: 600;
-      font-size: 16px;
     }
 
     nav ul li a:hover {
       color: #E07BAE;
     }
 
-    /* KONTAKT-BEREICH */
-    .contact-section {
-      padding: 100px 20px 120px;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
-    .contact-section h1 {
+    h1, h2 {
+      color: #333; /* Überschriften jetzt schwarz */
+    }
+
+    h1 {
       font-size: 36px;
-      color: #333; /* Schwarz */
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
-    .contact-section p {
+    h2 {
+      font-size: 26px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
       font-size: 18px;
-      color: #555;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: left;
-    }
-
-    label {
-      font-weight: bold;
-      color: #444;
-    }
-
-    input, textarea {
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 16px;
-      width: 100%;
-      box-sizing: border-box;
-      font-family: inherit;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .submit-button {
-      background-color: #E07BAE;
-      color: white;
-      font-weight: bold;
-      padding: 16px 30px;
-      border-radius: 50px;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      align-self: center;
-    }
-
-    .submit-button:hover {
-      background-color: white;
-      color: #E07BAE;
-      border: 2px solid #E07BAE;
-    }
-
-    /* FOOTER */
     footer {
       background-color: #f9f9f9;
       padding: 60px 100px 30px;
       color: #333;
       border-top: 1px solid #eee;
-      margin-top: 80px;
     }
 
     .footer-container {
@@ -145,7 +104,7 @@
       font-size: 18px;
       margin-bottom: 15px;
       font-weight: 700;
-      color: #333; /* Schwarz */
+      color: #333;
     }
 
     .footer-column ul {
@@ -178,6 +137,7 @@
       font-size: 14px;
       color: #777;
     }
+
   </style>
 </head>
 
@@ -188,47 +148,29 @@
     <div class="logo">
       <a href="index.html"><img src="bilder/heyfem.logos1.png" alt="heyfem! Logo"></a>
     </div>
-
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="workshops.html">Workshops</a></li>
         <li><a href="überuns.html">Über uns</a></li>
-        <li><a href="kontakt.html" style="color: #E07BAE;">Kontakt</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- KONTAKT-INHALT -->
-  <section class="contact-section">
-    <h1>Kontaktiere uns gerne</h1>
-    <p>Wir freuen uns, von dir zu hören!</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>Was die Workshops ausmacht</h1>
 
-    <!-- Formular mit Formspree -->
-    <form action="https://formspree.io/f/xjkppnvp" method="POST">
-      <div>
-        <label for="vorname">Vorname</label>
-        <input type="text" id="vorname" name="Vorname" required>
-      </div>
+    <h2>Praxisnahe Orientierung im digitalen Alltag</h2>
+    <p>Viele junge Menschen bekommen in der Schule kaum Unterstützung, wenn es um Themen wie Social Media, Selbstwert, digitale Sicherheit oder mentale Gesundheit geht – obwohl genau das ihren Alltag prägt. Behind My Profile setzt hier an: In modernen, interaktiven Workshops geht es um Identität, Vergleichsdruck, digitale Risiken und gesunde Online-Gewohnheiten – verständlich erklärt, alltagsnah und verbunden mit psychologischem Know-how und echten Erfahrungen aus Bildungsprojekten.</p>
 
-      <div>
-        <label for="nachname">Nachname</label>
-        <input type="text" id="nachname" name="Nachname" required>
-      </div>
+    <h2>Früh unterstützen, nachhaltig stärken</h2>
+    <p>Die Workshops helfen jungen Menschen dabei, eigene Bedürfnisse wahrzunehmen, souverän zu handeln und bewusster mit Social Media, digitalen Beziehungen und online/offline Grenzen umzugehen. Ein sicherer Rahmen schafft Raum für Fragen, Austausch und Orientierung – ohne Druck, Vergleich oder Bewertung.</p>
 
-      <div>
-        <label for="email">E-Mail-Adresse</label>
-        <input type="email" id="email" name="Email" required>
-      </div>
-
-      <div>
-        <label for="nachricht">Nachricht</label>
-        <textarea id="nachricht" name="Nachricht" placeholder="Deine Nachricht an uns..." required></textarea>
-      </div>
-
-      <button type="submit" class="submit-button">Absenden</button>
-    </form>
-  </section>
+    <h2>Ehrenamtlich & kostenfrei angeboten</h2>
+    <p>Die Workshops werden aus persönlichem Engagement heraus ehrenamtlich und vollständig kostenfrei für Schulen angeboten. Die Inhalte basieren auf meinem Psychologiestudium, meiner intensiven Auseinandersetzung mit den digitalen Lebenswelten der Generation Z und Alpha sowie dem Wunsch, jungen Menschen genau die Orientierung zu ermöglichen, die ich mir selbst früher im Umgang mit Social Media gewünscht hätte.</p>
+  </main>
 
   <!-- FOOTER -->
   <footer>
