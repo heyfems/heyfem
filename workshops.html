@@ -41,7 +41,7 @@
       text-align:center;
     }
 
-    /* → MINI-LOGO ABSOLUT PERFEKT ZENTRIERT */
+    /* MINI LOGO PERFECT CENTERED */
     .mini-logo {
       width:90px;
       display:block;
@@ -100,22 +100,102 @@
       padding:0;
     }
 
-    /* FOLLOW SECTION */
-    .follow {
-      text-align:center;
-      padding:80px 20px 40px;
-      font-size:22px;
-      font-weight:600;
+    /* SOCIAL MEDIA SECTION */
+    .social-section {
+      text-align: center;
+      padding: 60px 20px 50px;
+      background-color: #fff;
+    }
+
+    .social-section p {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      background-color: #E07BAE;
+      border-radius: 50%;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+      background-color: #f095c3;
+    }
+
+    .social-icons svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
     }
 
     /* FOOTER */
     footer {
-      background:#fff;
-      padding:40px;
-      text-align:center;
-      font-size:14px;
-      color:#666;
+      background-color: #f9f9f9;
+      padding: 60px 100px 30px;
+      color: #333;
+      border-top: 1px solid #eee;
     }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-column h4 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #E07BAE;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #b8528d;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
   </style>
 </head>
 
@@ -135,7 +215,6 @@
 
 <section class="hero-wrapper">
 
-  <!-- MINI LOGO PERFECT CENTERED -->
   <img class="mini-logo" src="bilder/transparent-logo.png" alt="Mini-Logo">
 
   <div class="hero-title">Big collections.<br>No code required.</div>
@@ -145,13 +224,12 @@
     <a class="hero-btn light" href="workshops.html">Workshops</a>
   </div>
 
-  <!-- FULL-WIDTH IMAGE -->
   <div class="hero-image-wrapper">
     <img src="bilder/dein-big-bild.png" class="hero-image" alt="hero image strip">
   </div>
 </section>
 
-  <!-- SOCIAL MEDIA -->
+<!-- SOCIAL MEDIA -->
 <section class="social-section">
   <p>Folge uns gerne auch auf unseren anderen Kanälen!</p>
   <div class="social-icons">
@@ -209,12 +287,7 @@
   </div>
 </footer>
 
-<footer>
-  © Behind My Profile – Alle Rechte vorbehalten
-</footer>
-
 </body>
 </html>
-
 
 
