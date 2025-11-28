@@ -34,7 +34,6 @@
 
     nav a:hover { color:#E07BAE; }
 
-
     /* HERO */
     .hero-wrapper {
       background:#f2f2f2;
@@ -99,10 +98,7 @@
       padding:0;
     }
 
-    /* ------------------------------------------------- */
-    /* FOOTER – Socials links, Rechtliches rechts        */
-    /* ------------------------------------------------- */
-
+    /* FOOTER */
     footer {
       background-color: #f9f9f9;
       padding: 60px 100px 30px;
@@ -113,13 +109,15 @@
     .footer-container {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
 
     /* Social buttons */
     .footer-socials {
       display: flex;
       gap: 18px;
+      flex: 0 0 auto;
     }
 
     .footer-socials a {
@@ -141,6 +139,7 @@
     /* Rechtszentrierter Rechtliches-Block */
     .footer-column {
       text-align: right;
+      flex: 0 0 auto;
     }
 
     .footer-column h4 {
@@ -179,6 +178,19 @@
       font-size: 14px;
       color: #777;
     }
+
+    /* Optional: Footer responsive */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-column {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -212,15 +224,12 @@
   </div>
 </section>
 
-
-<!-- ========================== -->
-<!--      FOOTER SECTION        -->
-<!-- ========================== -->
+<!-- FOOTER -->
 <footer>
 
   <div class="footer-container">
 
-    <!-- LEFT – Social Media Circles -->
+    <!-- Social Media -->
     <div class="footer-socials">
 
       <!-- Instagram -->
@@ -246,8 +255,7 @@
 
     </div>
 
-
-    <!-- RIGHT – Impressum & Datenschutz -->
+    <!-- Impressum & Datenschutz -->
     <div class="footer-column">
       <h4>Behind My Profile</h4>
       <ul>
@@ -266,6 +274,7 @@
 
 </body>
 </html>
+
 
 
 
