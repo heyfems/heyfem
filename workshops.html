@@ -13,7 +13,7 @@
     nav a:hover { color:#E07BAE; }
 
     /* HERO */
-    .hero-wrapper { background:#f2f2f2; padding:40px 20px 50px; text-align:center; }
+    .hero-wrapper { background:#f2f2f2; padding:120px 20px 80px; text-align:center; }
     .hero-title { font-size:48px; font-weight:700; margin-bottom:25px; }
     .hero-buttons { margin-top:25px; display:flex; justify-content:center; gap:20px; }
     .hero-btn { padding:14px 34px; border-radius:40px; border:none; font-size:18px; font-weight:600; cursor:pointer; text-decoration:none; }
@@ -30,7 +30,10 @@
 
     /* FOOTER */
     footer { background:#fff; padding:40px; text-align:center; font-size:14px; color:#666; }
-  </style>
+  .hero-image-wrapper { width:100%; margin-top:40px; overflow:hidden; }
+.hero-image { width:100%; height:auto; display:block; margin:0; padding:0; }
+.image-strip { padding:0; margin:0; }
+</style>
 </head>
 <body>
 
@@ -56,10 +59,12 @@
   </div>
 
   <!-- FULL-WIDTH IMAGE -->
-  <div style="margin-top:60px; width:100%; overflow:hidden;">
-    <img src="bilder/dein-big-bild.png" style="width:100%; height:auto; display:block; border-radius:0;" alt="hero image strip">
+  <div class="hero-image-wrapper">
+    <img src="bilder/dein-big-bild.png" class="hero-image" alt="hero image strip">
   </div>
 </section>
+
+<section class="follow">Folge auch unseren anderen Kanälen</section>
 
 <footer>
   © Behind My Profile – Alle Rechte vorbehalten
@@ -67,4 +72,5 @@
 
 </body>
 </html>
+
 
