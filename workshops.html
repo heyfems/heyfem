@@ -1,232 +1,428 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Home | Behind My Profile</title>
-  <link rel="icon" href="bilder/erstes-logo.png" type="image/png">
+  <meta charset="utf-8">
+  <title>Workshops | Behind My Profile</title>
+
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
+    :root{
+      --gap: 24px;
+      --slide-peek: 120px; /* wieviel man vom nächsten Slide sieht */
+      --max-width: 1100px;
+    }
 
-    header {
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:#fff;
+      color:#111;
+    }
+
+    /* Header (du hast bereits Code dafür; hier minimal, damit die Seite eigenständig ist) */
+    header{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:20px 40px;
+      padding:18px 40px;
       background:#fff;
+      border-bottom:1px solid #f0f0f0;
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    header img{ height:56px; }
+    nav ul{ display:flex; gap:22px; margin:0; padding:0; list-style:none; align-items:center;}
+    nav a{ text-decoration:none; color:#444; font-weight:600; }
+    nav a:hover{ color:#E07BAE; }
+
+    /* Page container */
+    .container{
+      max-width: var(--max-width);
+      margin: 48px auto;
+      padding: 0 20px;
     }
 
-    header img { height:60px; }
-
-    nav ul {
-      list-style:none;
-      display:flex;
-      gap:30px;
-      margin:0;
-      padding:0;
-    }
-
-    nav a {
-      text-decoration:none;
-      font-weight:600;
-      color:#444;
-    }
-
-    nav a:hover { color:#E07BAE; }
-
-    /* HERO */
-    .hero-wrapper {
-      background:#f2f2f2;
-      padding:20px 20px 40px;
+    /* Title & subtitle */
+    .title{
       text-align:center;
-      position: relative;
+      font-weight:800;
+      font-size:46px;
+      line-height:1.06;
+      margin-bottom:10px;
+    }
+    .subtitle{
+      text-align:center;
+      color:#666;
+      margin-bottom:28px;
+      font-size:18px;
     }
 
-    .mini-logo {
-      width:90px;
-      display:block;
-      margin:5px auto 5px auto;
-    }
-
-    .hero-title {
-      font-size:48px;
-      font-weight:700;
-      margin-bottom:25px;
-    }
-
-    .hero-buttons {
-      margin-top:25px;
+    /* Pills */
+    .pills{
       display:flex;
+      gap:12px;
       justify-content:center;
-      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:36px;
     }
-
-    .hero-btn {
-      padding:14px 34px;
-      border-radius:40px;
-      border:none;
-      font-size:18px;
-      font-weight:600;
-      cursor:pointer;
-      text-decoration:none;
-    }
-
-    .hero-btn.dark { background:#000; color:#fff; }
-
-    .hero-btn.light {
+    .pill{
       background:#fff;
-      color:#000;
-      border:2px solid #cccccc;
-      border-radius:40px;
-      padding:14px 34px;
-      font-size:18px;
-      font-weight:600;
+      border:1px solid #ebe8e8;
+      padding:10px 18px;
+      border-radius:28px;
       cursor:pointer;
-      text-decoration:none;
+      font-weight:600;
+      transition: all .18s;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+    }
+    .pill:hover{ transform:translateY(-3px); }
+    .pill.active{
+      background:#000;
+      color:#fff;
+      border-color:#000;
     }
 
-    .hero-image-wrapper {
-      width:100%;
-      height:500px; /* feste Höhe für stabilen Footer */
+    /* Carousel viewport */
+    .carousel-viewport{
       overflow:hidden;
-      margin-top:40px;
+      padding-bottom:18px; /* etwas platz für dots */
     }
 
-    .hero-image {
+    /* Slides row */
+    .slides{
+      display:flex;
+      gap: var(--gap);
+      /* We'll move this with JS via transform */
+      will-change: transform;
+      transition: transform 450ms cubic-bezier(.22,.9,.32,1);
+      align-items:stretch;
+      padding-left: calc(var(--slide-peek) / 2); /* so first slide is centered with peek */
+      padding-right: calc(var(--slide-peek) / 2);
+    }
+
+    /* Single slide */
+    .slide{
+      flex: 0 0 calc(100% - var(--slide-peek)); /* visible area so next is peeking */
+      border-radius:20px;
+      display:flex;
+      align-items:stretch;
+      min-height: 360px; /* Höhe: groß wie gewünscht */
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+      overflow:hidden;
+      position:relative;
+    }
+
+    /* Inside slide: left image and right content */
+    .slide .left,
+    .slide .right{
+      padding:32px;
+    }
+
+    .slide .left{
+      width:48%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(0,0,0,0.03);
+    }
+
+    .slide .left img{
       width:100%;
       height:100%;
-      object-fit:cover; /* Bild skaliert, Layout springt nicht */
-      display:block;
+      object-fit:cover;
+      border-radius:12px;
+    }
+
+    .slide .right{
+      width:52%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      text-align:left;
+    }
+
+    .slide h3{ font-size:30px; margin:0 0 12px; font-weight:800; }
+    .slide p{ margin:0 0 18px; color:#2d2d2d; line-height:1.5; font-size:16px; }
+    .slide .cta{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:28px;
+      background:#fff;
+      border:none;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    /* Colors for the 6 slides */
+    .slide.slide-1{ background: #FFD324; } /* gelb */
+    .slide.slide-2{ background: #FFDDE8; } /* rosa/pastell */
+    .slide.slide-3{ background: #3E2A59; color: #fff; } /* dunkel lila */
+    .slide.slide-4{ background: #D6F6DD; } /* grün pastell */
+    .slide.slide-5{ background: #D9EEFF; } /* blau pastell */
+    .slide.slide-6{ background: #FFE6CC; } /* orange/peach */
+
+    /* adjust text color for dark slide */
+    .slide-3 h3, .slide-3 p, .slide-3 .cta{ color:#fff; }
+    .slide-3 .cta{ background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); color: #fff; }
+
+    /* make slides taller (you requested more vertical space) */
+    .slide{ min-height: 420px; padding: 0; }
+
+    /* Dots */
+    .dots{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:22px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%; background:#ddd; cursor:pointer;
+    }
+    .dot.active{ background:#333; }
+
+    /* show a faint strip of next card on the right using pseudo element (not necessary but helps) */
+    @media (max-width:980px){
+      :root{ --slide-peek: 60px; }
+      .slide{ min-height: 380px; }
+    }
+
+    @media (max-width:700px){
+      .slide{
+        flex: 0 0 calc(100% - 40px);
+        min-height: 460px;
+        border-radius: 14px;
+      }
+      .slide .left{ width:100%; padding:12px; }
+      .slide .right{ width:100%; padding:16px; text-align:left; }
+      .slides{ padding-left: 20px; padding-right: 20px; }
     }
 
     /* FOOTER */
-    footer {
-      background-color: #f9f9f9;
-      padding: 60px 100px 30px;
-      color: #333;
-      border-top: 1px solid #eee;
-    }
+footer {
+  background-color: #f9f9f9;
+  padding: 60px 100px 30px;
+  color: #333;
+  border-top: 1px solid #eee;
+}
 
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 
-    /* Social buttons */
-    .footer-socials {
-      display: flex;
-      gap: 18px;
-      flex: 0 0 auto;
-    }
+/* Social buttons */
+.footer-socials {
+  display: flex;
+  gap: 18px;
+  flex: 0 0 auto;
+}
 
-    .footer-socials a {
-      display: inline-flex; /* zwingt die SVGs sichtbar zu sein */
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background-color: #E07BAE;
-    }
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #E07BAE;
+}
 
-    .footer-socials svg {
-      width: 26px;
-      height: 26px;
-      fill: #fff;
-    }
+.footer-socials svg {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
 
-    /* Rechtszentrierter Rechtliches-Block */
-    .footer-column {
-      text-align: right;
-      flex: 0 0 auto;
-      min-width: 120px; /* verhindert Zusammenfallen */
-    }
+/* Rechtszentrierter Rechtliches-Block */
+.footer-column {
+  text-align: right;
+  flex: 0 0 auto;
+  min-width: 120px;
+}
 
-    .footer-column h4 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      font-weight: 700;
-      color: #333;
-    }
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #333;
+}
 
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .footer-column ul li {
-      margin-bottom: 8px;
-    }
+.footer-column ul li {
+  margin-bottom: 8px;
+}
 
-    .footer-column ul li a {
-      text-decoration: none;
-      color: #E07BAE;
-      font-weight: 500;
-      font-size: 16px;
-    }
+.footer-column ul li a {
+  text-decoration: none;
+  color: #E07BAE;
+  font-weight: 500;
+  font-size: 16px;
+}
 
-    .footer-column ul li a:hover {
-      color: #b8528d;
-    }
+.footer-column ul li a:hover {
+  color: #b8528d;
+}
 
-    .footer-bottom {
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
-      padding-top: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-    }
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
 
-    /* Responsive Footer */
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .footer-column {
-        margin-top: 20px;
-        text-align: center;
-      }
-    }
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-column {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
   </style>
 </head>
-
 <body>
 
-<header>
-  <img src="bilder/og-logo.png" alt="Logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="workshops.html">Workshops</a></li>
-      <li><a href="überuns.html">Über uns</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- HEADER (du hattest schon Code) -->
+  <header>
+    <img src="bilder/og-logo.png" alt="Logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="überuns.html">Über uns</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="hero-wrapper">
+  <main class="container">
 
-  <img class="mini-logo" src="bilder/transparent-logo.png" alt="Mini-Logo">
+    <div class="title">Connect the best tools<br>together to make your life easy</div>
+    <div class="subtitle">Bring the best experiences across the internet to one place</div>
 
-  <div class="hero-title">Big collections.<br>No code required.</div>
+    <!-- PILL NAV -->
+    <div class="pills" id="pills">
+      <div class="pill active" data-index="0">Social Media & Selbstwert</div>
+      <div class="pill" data-index="1">Identität & Selbstliebe</div>
+      <div class="pill" data-index="2">Your Next Chapter</div>
+      <div class="pill" data-index="3">Mind & Body Wellbeing</div>
+      <div class="pill" data-index="4">Beziehungen & Dating</div>
+      <div class="pill" data-index="5">Sicherheit</div>
+    </div>
 
-  <div class="hero-buttons">
-    <a class="hero-btn dark" href="überuns.html">Über uns</a>
-    <a class="hero-btn light" href="workshops.html">Workshops</a>
-  </div>
+    <!-- CAROUSEL -->
+    <div class="carousel-viewport">
+      <div class="slides" id="slides">
 
-  <div class="hero-image-wrapper">
-    <img src="bilder/dein-big-bild.png" class="hero-image" alt="hero image">
-  </div>
-</section>
+        <!-- Slide 1 - GELB (Platzhalterbild links) -->
+        <article class="slide slide-1" data-index="0">
+          <div class="left">
+            <!-- Ersetze den src-Pfad bild/platzhalter.png mit deinem echten Bild -->
+            <img src="bilder/platzhalter.png" alt="Workshop Bild Platzhalter">
+          </div>
+          <div class="right">
+            <h3>Always-there support</h3>
+            <p>Unpack what’s on your mind with our companion and get personalized recommendations based on how you’re feeling.</p>
+            <button class="cta">Chat with Ebb</button>
+          </div>
+        </article>
 
-<!-- FOOTER -->
+        <!-- Slide 2 - ROSA -->
+        <article class="slide slide-2" data-index="1">
+          <div class="left">
+            <img src="bilder/platzhalter.png" alt="Workshop Bild Platzhalter">
+          </div>
+          <div class="right">
+            <h3>Confidence & Identity</h3>
+            <p>Workshops that help young people explore identity and build self-worth in a media-saturated world.</p>
+            <button class="cta">Zur Workshop-Übersicht</button>
+          </div>
+        </article>
+
+        <!-- Slide 3 - DUNKEL LILA -->
+        <article class="slide slide-3" data-index="2">
+          <div class="left">
+            <img src="bilder/platzhalter.png" alt="Workshop Bild Platzhalter">
+          </div>
+          <div class="right">
+            <h3>Your Next Chapter</h3>
+            <p>Tools and tips for applying, exploring new paths and planning your next step.</p>
+            <button class="cta">Mehr erfahren</button>
+          </div>
+        </article>
+
+        <!-- Slide 4 - GRÜN -->
+        <article class="slide slide-4" data-index="3">
+          <div class="left">
+            <img src="bilder/platzhalter.png" alt="Workshop Bild Platzhalter">
+          </div>
+          <div class="right">
+            <h3>Mind & Body Wellbeing</h3>
+            <p>Practical exercises and conversations to strengthen mental and physical wellbeing.</p>
+            <button class="cta">Angebot ansehen</button>
+          </div>
+        </article>
+
+        <!-- Slide 5 - BLAU -->
+        <article class="slide slide-5" data-index="4">
+          <div class="left">
+            <img src="bilder/platzhalter.png" alt="Workshop Bild Platzhalter">
+          </div>
+          <div class="right">
+            <h3>Relationships & Dating</h3>
+            <p>Boundaries, healthy relationships and communication—designed for young people.</p>
+            <button class="cta">Details</button>
+          </div>
+        </article>
+
+        <!-- Slide 6 - ORANGE -->
+        <article class="slide slide-6" data-index="5">
+          <div class="left">
+            <img src="bilder/platzhalter.png" alt="Workshop Bild Platzhalter">
+          </div>
+          <div class="right">
+            <h3>Sicherheit</h3>
+            <p>Digital safety, consent and practical self-protection skills for everyday life.</p>
+            <button class="cta">Jetzt buchen</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots" id="dots">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+      <div class="dot" data-index="3"></div>
+      <div class="dot" data-index="4"></div>
+      <div class="dot" data-index="5"></div>
+    </div>
+
+  </main>
+
 <footer>
 
   <div class="footer-container">
@@ -268,6 +464,86 @@
   </div>
 
 </footer>
+
+<script>
+(function(){
+  const slidesEl = document.getElementById('slides');
+  const slideEls = Array.from(document.querySelectorAll('.slide'));
+  const pills = Array.from(document.querySelectorAll('.pill'));
+  const dots  = Array.from(document.querySelectorAll('.dot'));
+
+  let current = 0;
+
+  function updateActive(index){
+    // bounds
+    if(index < 0) index = 0;
+    if(index >= slideEls.length) index = slideEls.length - 1;
+    current = index;
+
+    // pill active
+    pills.forEach(p => p.classList.toggle('active', Number(p.dataset.index) === index));
+    dots.forEach(d => d.classList.toggle('active', Number(d.dataset.index) === index));
+
+    // calculate translateX:
+    // We want to move slides row so that the slide at `index` is positioned at the left padding (centered view),
+    // considering slide width and gap. We measure slide offsetWidth dynamically.
+    const slide = slideEls[index];
+    const gap = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--gap')) || 24;
+    const slidePeek = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--slide-peek')) || 120;
+
+    // left padding is slide-peek/2 (set in CSS)
+    const viewportPadding = slidePeek / 2;
+
+    // compute distance from start to the selected slide's left edge
+    let offset = 0;
+    for(let i=0;i<index;i++){
+      offset += slideEls[i].offsetWidth + gap;
+    }
+
+    // final translate: move to negative (offset - viewportPadding)
+    const translateX = -(offset - viewportPadding);
+
+    slidesEl.style.transform = `translateX(${translateX}px)`;
+  }
+
+  // initial adjust on load (ensure measurements correct)
+  window.addEventListener('load', () => {
+    updateActive(0);
+    // small resize after fonts load
+    setTimeout(()=> updateActive(current), 200);
+  });
+
+  // click handlers for pills
+  pills.forEach(p => {
+    p.addEventListener('click', () => {
+      const idx = Number(p.dataset.index);
+      updateActive(idx);
+    });
+  });
+
+  // click handlers for dots
+  dots.forEach(d => {
+    d.addEventListener('click', () => {
+      const idx = Number(d.dataset.index);
+      updateActive(idx);
+    });
+  });
+
+  // optional: keyboard left/right
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowRight') updateActive(Math.min(current + 1, slideEls.length - 1));
+    if(e.key === 'ArrowLeft') updateActive(Math.max(current - 1, 0));
+  });
+
+  // recalc on resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(()=> updateActive(current), 120);
+  });
+
+})();
+</script>
 
 </body>
 </html>

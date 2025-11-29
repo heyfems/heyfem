@@ -2,307 +2,104 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Behind My Profile - Workshops</title>
-
-  <link rel="icon" href="bilder/heyfem.logos1.png" type="image/png">
-  <link rel="apple-touch-icon" href="bilder/heyfem.logos1.png">
-  <meta property="og:image" content="https://www.heyfem.org/bilder/heyfem.logo1s.png">
-  <meta property="og:title" content="Behind My Profile – Jugend stärken. Zukunft stärken.">
-  <meta property="og:description" content="Eine Initiative für Prävention, Bildung und Empowerment.">
+  <title>Home | Behind My Profile</title>
+  <link rel="icon" href="bilder/erstes-logo.png" type="image/png">
 
   <style>
-    body {
-      font-family: Aperçu, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      background-color: #fff;
-      line-height: 1.6;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: white;
-      padding: 00px 40px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      background:#fff;
     }
 
-    .logo img {
-      width: 180px;
-      height: auto;
-    }
+    header img { height:60px; }
 
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
+      list-style:none;
+      display:flex;
+      gap:30px;
+      margin:0;
+      padding:0;
     }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
+    nav a {
+      text-decoration:none;
+      font-weight:600;
+      color:#444;
     }
 
-    nav ul li a:hover {
-      color: #E07BAE;
-    }
+    nav a:hover { color:#E07BAE; }
 
-    /* --- HERO-BEREICH --- */
-    .hero {
-  position: relative;
-  text-align: left;
-  padding: 160px 80px 40px 80px;     /* größerer, moderner Hero */
-  color: #333;
-
-  background-image: url('bilder/hehe.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  min-height: 480px;       /* sorgt für große, volle Fläche */
-}
-
-    .hero h1,
-    .hero p,
-    .hero a {
+    /* HERO */
+    .hero-wrapper {
+      background:#f2f2f2;
+      padding:20px 20px 40px;
+      text-align:center;
       position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin-left: 0;  /* Kein zusätzlicher Abstand */
     }
 
-    .hero h1 {
-      font-size: 50px; /* Größerer Titel */
-  font-weight: 700; /* Fett */
-  color: #333;
-  margin-bottom: 15px;
-  max-width: 650px; /* Maximale Breite für Titel */
-  line-height: 1.2; /* Mehr Zeilenabstand, um den Titel besser lesbar zu machen */
+    .mini-logo {
+      width:90px;
+      display:block;
+      margin:5px auto 5px auto;
     }
 
-    .hero p {
-      font-size: 20px;
-      max-width: 650px;
-      margin: 0 auto 40px;
-      color: #444;
-      margin-left: 0;
-      line-height: 1.5;
+    .hero-title {
+      font-size:48px;
+      font-weight:700;
+      margin-bottom:25px;
     }
 
-    /* --- BUTTON MIT PFEIL --- */
-    .hero a.button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #E07BAE;
-      color: white;
-      text-decoration: none;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      margin-left: 0;
+    .hero-buttons {
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
     }
 
-    .hero a.button:hover {
-      background-color: white;
-      color: #E07BAE;
-      border: 2px solid #E07BAE;
+    .hero-btn {
+      padding:14px 34px;
+      border-radius:40px;
+      border:none;
+      font-size:18px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
     }
 
-    .button .arrow {
-      margin-left: 10px;
-      transition: transform 0.3s ease, fill 0.3s ease;
-      fill: white;
+    .hero-btn.dark { background:#000; color:#fff; }
+
+    .hero-btn.light {
+      background:#fff;
+      color:#000;
+      border:2px solid #cccccc;
+      border-radius:40px;
+      padding:14px 34px;
+      font-size:18px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
     }
 
-    a.button:hover .arrow {
-      transform: translateX(6px);
-      fill: #E07BAE;
+    .hero-image-wrapper {
+      width:100%;
+      height:500px; /* feste Höhe für stabilen Footer */
+      overflow:hidden;
+      margin-top:40px;
     }
 
-    /* --- TESTIMONIAL- / COMMUNITY-BEREICH --- */
-    .community-section {
-      background-color: #ffffff;
-      padding: 80px 20px;
-      text-align: center;
+    .hero-image {
+      width:100%;
+      height:100%;
+      object-fit:cover; /* Bild skaliert, Layout springt nicht */
+      display:block;
     }
 
-    .community-section h2 {
-      font-size: 34px;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 40px;
-    }
-
-    .testimonial-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      padding: 0 20px;
-    }
-
-    .arrow-btn {
-      background: none;
-      border: none;
-      font-size: 34px;
-      color: #E07BAE;
-      cursor: pointer;
-      width: 48px;
-      height: 48px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .arrow-btn:focus {
-      outline: 2px solid rgba(224,123,174,0.2);
-      border-radius: 50%;
-    }
-
-    .testimonial-card {
-      width: 720px;
-      max-width: calc(100% - 120px);
-      background: #fdf8fa;
-      border-radius: 10px;
-      padding: 36px 48px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      text-align: left;
-      display: none;
-    }
-
-    .testimonial-card.active {
-      display: block;
-      animation: slideIn 0.45s ease;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .testimonial-top {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .profile-pic {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 3px solid #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-
-    .quote {
-      font-size: 18px;
-      color: #444;
-      font-style: italic;
-      margin: 0;
-    }
-
-    .testimonial-meta {
-      margin-top: 18px;
-    }
-
-    .testimonial-name {
-      color: #E07BAE;
-      font-weight: 700;
-      margin: 6px 0 4px;
-      font-size: 16px;
-    }
-
-    .testimonial-role {
-      color: #777;
-      font-size: 14px;
-    }
-
-    .dots {
-      margin-top: 18px;
-      text-align: center;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin: 0 6px;
-      background: #e6d6dd;
-      border-radius: 50%;
-    }
-
-    .dot.active {
-      background: #E07BAE;
-    }
-
-    /* --- SOCIAL MEDIA SEKTION --- */
-    .social-section {
-      text-align: center;
-      padding: 60px 20px 50px;
-      background-color: #fff;
-    }
-
-    .social-section p {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 25px;
-      color: #333;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .social-icons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 55px;
-      height: 55px;
-      background-color: #E07BAE;
-      border-radius: 50%;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.1);
-      background-color: #f095c3;
-    }
-
-    .social-icons svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-    }
-
-    /* --- FOOTER --- */
+    /* FOOTER */
     footer {
       background-color: #f9f9f9;
       padding: 60px 100px 30px;
@@ -311,15 +108,40 @@
     }
 
     .footer-container {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1fr;
-      gap: 40px;
-      align-items: start;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
 
-    .footer-logo img {
-      width: 180px;
-      height: auto;
+    /* Social buttons */
+    .footer-socials {
+      display: flex;
+      gap: 18px;
+      flex: 0 0 auto;
+    }
+
+    .footer-socials a {
+      display: inline-flex; /* zwingt die SVGs sichtbar zu sein */
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #E07BAE;
+    }
+
+    .footer-socials svg {
+      width: 26px;
+      height: 26px;
+      fill: #fff;
+    }
+
+    /* Rechtszentrierter Rechtliches-Block */
+    .footer-column {
+      text-align: right;
+      flex: 0 0 auto;
+      min-width: 120px; /* verhindert Zusammenfallen */
     }
 
     .footer-column h4 {
@@ -344,7 +166,6 @@
       color: #E07BAE;
       font-weight: 500;
       font-size: 16px;
-      transition: color 0.3s;
     }
 
     .footer-column ul li a:hover {
@@ -360,590 +181,80 @@
       color: #777;
     }
 
-    /* --- MOBILE --- */
-    @media (max-width: 900px) {
-      .hero {
-        padding: 110px 20px;
-      }
-
-      .testimonial-card {
-        padding: 24px;
-      }
-
-      .testimonial-wrapper {
-        padding: 0 12px;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .testimonial-wrapper {
+    /* Responsive Footer */
+    @media (max-width: 768px) {
+      .footer-container {
         flex-direction: column;
-        gap: 12px;
+        align-items: center;
+        text-align: center;
       }
-
-      .arrow-btn {
-        font-size: 28px;
-      }
-
-      .testimonial-card {
-        width: 100%;
-        max-width: 100%;
+      .footer-column {
+        margin-top: 20px;
+        text-align: center;
       }
     }
-
-    .action-banner {
-  text-align: center;
-  padding: 60px 20px 00px 20px;
-  background-color: #fff; /* optional hellgrau als Hintergrund */
-}
-
-.action-banner h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  font-weight: 600;
-}
-
-.button-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 gleiche Spalten */
-  gap: 30px 20px; /* 30px vertikal zwischen Reihen, 20px horizontal zwischen Buttons */
-  width: 100%; /* volle Breite */
-  max-width: 1200px; /* Gesamtbreite verringert, sodass links/rechts kleiner Abstand bleibt */
-  margin: 0 auto;
-  padding: 0 10px; /* kleiner Abstand zu den Seiten */
-  box-sizing: border-box;
-}
-
-.action-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Text links, Pfeil rechts */
-  padding: 20px 25px; 
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1.3rem; 
-  min-width: 350px; /* Breite erhöhen */
-  font-weight: 500;
-  text-decoration: none;
-  color: #333;
-  transition: all 0.2s ease-in-out;
-  width: 100%; /* Buttons füllen ihre Grid-Spalte aus */
-  box-sizing: border-box;
-}
-
-.action-button:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.action-button .arrow {
-  margin-left: 0; /* da justify-content: space-between, Pfeil rechts */
-  font-size: 1.4rem; /* Größe des Pfeils */
-  transition: transform 0.3s ease, stroke 0.3s ease;
-  stroke: #333; /* Standardfarbe */
-}
-
-.action-button:hover .arrow {
-  transform: translateX(6px);
-  stroke: #E07BAE; /* Hover-Farbe wie Hero-Button */
-}
-
-.modal {
-  display: none; /* unsichtbar */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: #fdf0f7; /* hellrosa */
-  border-radius: 25px;
-  max-width: 800px;
-  width: 90%;
-  padding: 50px 80px; /* oben kleiner! */
-  min-height: 50px;
-  text-align: left;
-  position: relative;
-  margin-bottom: 5px !important;
-  padding-top: 80px !important;
-  padding-bottom: 20px !important; /* kleiner machen */
-}
-
-.modal-content h2 {
-  margin-top: 0 !important;
-  margin-bottom: 5px !important; /* Abstand zum Untertitel */
-  padding: 0 !important;
-}
-
-.modal-button:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.modal-text-block {
-  display: flex;
-  align-items: flex-start;
-  gap: 19px;
-}
-
-.modal-circle {
-  width: 60px;
-  height: 60px;
-  background-color: #ff4d8b; /* rosa Kreis */
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 5px; /* etwas Abstand oben */
-}
-
-.modal-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.modal-text-block p {
-  margin: 5px 0 0 0;
-}
-
-.modal-title {
-  font-size: 24px;
-  text-align: center;       /* horizontal zentrieren */
-  margin-bottom: 18px;
-}
-
-.modal-text {
-  text-align: center;   /* horizontal zentrieren */
-  margin-top: 0;      /* Abstand nach oben minimal */
-  margin-bottom: 20px;  /* Abstand nach unten */
-  line-height: 1.4;      /* dichter setzen, falls nötig */
-}
-
-.modal-text-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 30px;
-  margin: 30px 0 10px;
-}
-
-.modal-button-wrapper {
-  text-align: center;  /* zentriert NUR den Button */
-  margin-top: 10px;
-  padding-bottom: 40px;    /* Abstand nach unten (GLEICH für alle Modals!) */
-}
-
-.modal-button {
-  display: inline-block;
-  text-align: center;
-  padding: 12px 20px;
-  background-color: #ffffff;
-  color: #333;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 20px;
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-text-grid {
-  flex-grow: 1;
-}
-
-body {
-    margin: 0;
-    font-family: 'Aperçu', sans-serif;
-    background: #ffffff;
-    color: #222;
-}
-
-/* SECTION SPACING */
-.library-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-}
-
-/* TITLE */
-.library-title {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 35px;
-    color: #222;
-}
-
-/* CATEGORY FILTER */
-.category-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 45px;
-}
-
-.filter-item {
-    background: #f7f4f4;
-    border: none;
-    padding: 12px 26px;
-    border-radius: 35px;
-    font-size: 17px;
-    font-weight: 700;
-    font-family: 'Aperçu', sans-serif;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-/* HOVER-EFFEKT */
-.filter-item:hover {
-    background: #ddd;
-}
-
-/* AKTIVER BUTTON → SCHWARZ + WEISS */
-.filter-item.active {
-    background: #000;
-    color: #fff;
-}
-
-/* CARDS */
-.cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.card-text {
-    padding: 20px;
-    text-align: left;
-}
-
-.card-text h3 {
-    margin: 0 0 10px;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.card-text p {
-    margin: 0;
-    color: #555;
-    font-size: 15px;
-}
-
-/* ------------------------- */
-/*  ⭐ HIER KOMMEN DIE 3 NEUEN CSS BLÖCKE ⭐ */
-/* ------------------------- */
-
-/* CATEGORY CONTENT – Wrapper */
-.category-content {
-    margin-top: 50px;
-}
-
-/* ------------------------- */
-/*  ⭐ NEUE CATEGORY-GROUP REGELN ⭐ */
-/* ------------------------- */
-
-/* Ganze Kategorie-Gruppen ausblenden */
-.category-group {
-    display: none;
-}
-
-/* Aktive Kategorie-Gruppe sichtbar machen */
-.category-group.active {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-/* ⭐ Neue Content-Box mit Hintergrundbildern ⭐ */
-.category-group .content-box {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 20px;
-    height: 180px;
-    border-radius: 14px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: white;
-}
-
-/* Dunkler Verlauf für bessere Lesbarkeit */
-.category-group .content-box::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
-}
-
-/* Text über dem Bild */
-.category-group .content-box h3 {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-}
-
-/* ⭐ BILDER FÜR EINZELNE BOXEN ⭐ */
-
-/* Social Media & Selbstwert */
-.bg-realme { background-image: url("bilder/realme.jpg"); }
-.bg-fomo { background-image: url("bilder/fomo.jpg"); }
-
-/* Identität & Selbstliebe */
-.bg-werbinich { background-image: url("bilder/werbinich.jpg"); }
-.bg-innerglowup { background-image: url("bilder/innerglowup.jpg"); }
-.bg-pretty { background-image: url("bilder/pretty.jpg"); }
-
-/* Your Next Chapter */
-.bg-ausland { background-image: url("bilder/ausland.jpg"); }
-.bg-girlsinmale { background-image: url("bilder/girlsinmale.jpg"); }
-.bg-futureme { background-image: url("bilder/futureme.jpg"); }
-
-/* Mind & Body Wellbeing */
-.bg-feelingscheck { background-image: url("bilder/feelingscheck.jpg"); }
-.bg-periodpositivity { background-image: url("bilder/periodpositivity.jpg"); }
-
-/* Beziehungen & Dating */
-.bg-redgreen { background-image: url("bilder/redgreen.jpg"); }
-.bg-date { background-image: url("bilder/date.jpg"); }
-.bg-boundaries { background-image: url("bilder/boundaries.jpg"); }
-
-/* Sicherheit */
-.bg-catcalling { background-image: url("bilder/catcalling.jpg"); }
-.bg-digitalsicher { background-image: url("bilder/digitalsicher.jpg"); }
-.bg-koerperrechte { background-image: url("bilder/koerperrechte.jpg"); }
-
-
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <a href="index.html"><img src="bilder/behind.logo.png" alt="Logo"></a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html" style="color:#E07BAE;">Home</a></li>
-        <li><a href="workshops.html">Workshops</a></li>
-        <li><a href="überuns.html">Über uns</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Jugend stärken. <br>Zukunft stärken.</h1>
-    <p>Präventions- und Bildungsworkshops für einen sicheren und bewussten Umgang mit Social Media für Jugendliche und junge Erwachsene.</p>
-    <a href="kontakt.html" class="button">
-      Mehr erfahren
-      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-        <path d="M9.29 6.71a1 1 0 0 1 1.42 0L16 12l-5.29 5.29a1 1 0 1 1-1.42-1.42L13.17 12 9.29 8.12a1 1 0 0 1 0-1.41z"/>
-      </svg>
-    </a>
-  </section>
+<header>
+  <img src="bilder/og-logo.png" alt="Logo">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="überuns.html">Über uns</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
 
-<section class="library-section">
+<section class="hero-wrapper">
 
-    <h1 class="library-title">Unsere Workshop-Themen</h1>
+  <img class="mini-logo" src="bilder/transparent-logo.png" alt="Mini-Logo">
 
-    <div class="category-filter">
-        <button class="filter-item active" data-target="socialmedia">Social Media & Selbstwert</button>
-        <button class="filter-item" data-target="identität">Identität & Selbstliebe</button>
-        <button class="filter-item" data-target="chapter">Your Next Chapter</button>
-        <button class="filter-item" data-target="mindbody">Mind & Body Wellbeing</button>
-        <button class="filter-item" data-target="dating">Beziehungen & Dating</button>
-        <button class="filter-item" data-target="sicherheit">Sicherheit</button>
-    </div>
+  <div class="hero-title">Big collections.<br>No code required.</div>
 
-    <div class="category-content">
+  <div class="hero-buttons">
+    <a class="hero-btn dark" href="überuns.html">Über uns</a>
+    <a class="hero-btn light" href="workshops.html">Workshops</a>
+  </div>
 
-        <!-- ⭐ 1: Social Media & Selbstwert ⭐ -->
-        <div class="category-group active" id="socialmedia">
-
-            <div class="content-box bg-realme">
-                <h3>Real Me vs. Insta Me – Social Media ohne Druck</h3>
-            </div>
-
-            <div class="content-box bg-fomo">
-                <h3>FOMO Detox</h3>
-            </div>
-
-        </div>
-
-        <!-- ⭐ 2: Identität & Selbstliebe ⭐ -->
-        <div class="category-group" id="identität">
-
-            <div class="content-box bg-werbinich">
-                <h3>Wer bin ich eigentlich?</h3>
-            </div>
-
-            <div class="content-box bg-innerglowup">
-                <h3>Inner Glow Up</h3>
-            </div>
-
-            <div class="content-box bg-pretty">
-                <h3>Pretty Privilege</h3>
-            </div>
-
-        </div>
-
-        <!-- ⭐ 3: Your Next Chapter ⭐ -->
-        <div class="category-group" id="chapter">
-
-            <div class="content-box bg-ausland">
-                <h3>Girlpower im Ausland</h3>
-            </div>
-
-            <div class="content-box bg-girlsinmale">
-                <h3>Girls in Male Fields</h3>
-            </div>
-
-            <div class="content-box bg-futureme">
-                <h3>Future Me Visionboard</h3>
-            </div>
-
-        </div>
-
-        <!-- ⭐ 4: Mind & Body Wellbeing ⭐ -->
-        <div class="category-group" id="mindbody">
-
-            <div class="content-box bg-feelingscheck">
-                <h3>Feelings Check – Gefühle ohne Drama verstehen</h3>
-            </div>
-
-            <div class="content-box bg-periodpositivity">
-                <h3>Period Positivity</h3>
-            </div>
-
-        </div>
-
-        <!-- ⭐ 6: Beziehungen & Dating ⭐ -->
-        <div class="category-group" id="dating">
-
-            <div class="content-box bg-redgreen">
-                <h3>Red Flags & Green Flags</h3>
-            </div>
-
-            <div class="content-box bg-date">
-                <h3>Dating heute</h3>
-            </div>
-
-            <div class="content-box bg-boundaries">
-                <h3>Boundaries 101</h3>
-            </div>
-
-        </div>
-
-        <!-- ⭐ 7: Sicherheit ⭐ -->
-        <div class="category-group" id="sicherheit">
-
-            <div class="content-box bg-catcalling">
-                <h3>Catcalling: Was tun?</h3>
-            </div>
-
-            <div class="content-box bg-digitalsicher">
-                <h3>Digitale Sicherheit für Mädchen</h3>
-            </div>
-
-            <div class="content-box bg-koerperrechte">
-                <h3>Körperrechte kennen</h3>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-  <!-- SOCIAL MEDIA -->
-<section class="social-section">
-  <p>Folge uns gerne auch auf unseren anderen Kanälen!</p>
-  <div class="social-icons">
-
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/behindmyprofile" target="_blank" aria-label="Instagram">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zm4.75-9.88a1.13 1.13 0 1 1-1.13-1.13 1.13 1.13 0 0 1 1.13 1.13z"/>
-      </svg>
-    </a>
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/company/hey-fem/" target="_blank" aria-label="LinkedIn">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.34 17.34V10.67H5.67V17.34H8.34M7 9.47C7.83 9.47 8.5 8.8 8.5 7.97C8.5 7.14 7.83 6.47 7 6.47C6.17 6.47 5.5 7.14 5.5 7.97C5.5 8.8 6.17 9.47 7 9.47M18.34 17.34V13.47C18.34 11.07 16.84 9.67 14.84 9.67C13.44 9.67 12.64 10.47 12.27 11.07H12.2V10.67H9.67V17.34H12.34V13.84C12.34 12.87 12.87 12.14 13.74 12.14C14.6 12.14 15.07 12.84 15.07 13.87V17.34H18.34Z"/>
-      </svg>
-    </a>
-
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@behindmyprofile" target="_blank" aria-label="TikTok">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12.5 2c1.1 1.7 2.8 2.8 4.8 2.9V8c-1.6-.1-3.1-.7-4.4-1.6V15c0 2.7-2.2 5-5 5s-5-2.3-5-5 2.2-5 5-5c.5 0 1 .1 1.5.2v2.9c-.4-.2-.9-.3-1.5-.3-1.3 0-2.3 1-2.3 2.3s1 2.3 2.3 2.3 2.3-1 2.3-2.3V2h2z"/>
-      </svg>
-    </a>
-
+  <div class="hero-image-wrapper">
+    <img src="bilder/dein-big-bild.png" class="hero-image" alt="hero image">
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+
   <div class="footer-container">
 
-    <div class="footer-column">
-      <h4>heyfem!</h4>
-      <ul>
-        <li><a href="überuns.html">Über uns</a></li>
-        <li><a href="workshops.html">Workshops</a></li>
-        <li><a href="warumworkshops.html">Warum?</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
+    <!-- Social Media -->
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/behindmyprofile" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zm4.75-9.88a1.13 1.13 0 1 1-1.13-1.13 1.13 1.13 0 0 1 1.13 1.13z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/company/hey-fem/" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.34 17.34V10.67H5.67V17.34H8.34M7 9.47C7.83 9.47 8.5 8.8 8.5 7.97C8.5 7.14 7.83 6.47 7 6.47C6.17 6.47 5.5 7.14 5.5 7.97C5.5 8.8 6.17 9.47 7 9.47M18.34 17.34V13.47C18.34 11.07 16.84 9.67 14.84 9.67C13.44 9.67 12.64 10.47 12.27 11.07H12.2V10.67H9.67V17.34H12.34V13.84C12.34 12.87 12.87 12.14 13.74 12.14C14.6 12.14 15.07 12.84 15.07 13.87V17.34H18.34Z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.tiktok.com/@behindmyprofile" target="_blank" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12.5 2c1.1 1.7 2.8 2.8 4.8 2.9V8c-1.6-.1-3.1-.7-4.4-1.6V15c0 2.7-2.2 5-5 5s-5-2.3-5-5 2.2-5 5-5c.5 0 1 .1 1.5.2v2.9c-.4-.2-.9-.3-1.5-.3-1.3 0-2.3 1-2.3 2.3s1 2.3 2.3 2.3 2.3-1 2.3-2.3V2h2z"/>
+        </svg>
+      </a>
     </div>
 
+    <!-- Impressum & Datenschutz -->
     <div class="footer-column">
-      <h4>Rechtliches</h4>
+      <h4>Behind My Profile</h4>
       <ul>
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
@@ -953,112 +264,10 @@ body {
   </div>
 
   <div class="footer-bottom">
-    <p>© 2025 Behind My Profile. Alle Rechte vorbehalten.</p>
+    © 2025 Behind My Profile. Alle Rechte vorbehalten.
   </div>
+
 </footer>
-
-<!-- SCRIPT: Testimonials -->
-<script>
-(function() {
-  const cards = Array.from(document.querySelectorAll('.testimonial-card'));
-  const dots = Array.from(document.querySelectorAll('.dot'));
-  let idx = 0;
-
-  function show(i) {
-    cards.forEach((c, k) => c.classList.toggle('active', k === i));
-    dots.forEach((d, k) => d.classList.toggle('active', k === i));
-    idx = i;
-  }
-
-  window.changeTestimonial = function(step) {
-    const next = (idx + step + cards.length) % cards.length;
-    show(next);
-  };
-
-  dots.forEach(d =>
-    d.addEventListener('click', () => {
-      const i = Number(d.dataset.dot);
-      show(i);
-    })
-  );
-
-  // Optional Auto-Slider:
-  // setInterval(() => changeTestimonial(1), 7000);
-
-  show(0);
-})();
-
-// Alle Buttons mit Modal öffnen
-const modalButtons = document.querySelectorAll('.action-button[data-modal]');
-modalButtons.forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault(); // <-- verhindert Seitenwechsel
-    const modalId = btn.getAttribute('data-modal');
-    document.getElementById(modalId).style.display = 'flex';
-  });
-});
-
-// Schließen-Buttons
-document.querySelectorAll('.modal-close').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.closest('.modal').style.display = 'none';
-  });
-});
-
-// Klick außerhalb schließt Modal
-window.addEventListener('click', e => {
-  if (e.target.classList.contains('modal')) {
-    e.target.style.display = 'none';
-  }
-});
-
-function closeModal() {
-  document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
-}
-
-// Buttons öffnen Modal
-document.querySelectorAll('.action-button[data-modal]').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-    const modalId = btn.getAttribute('data-modal');
-    document.getElementById(modalId).style.display = 'flex';
-  });
-});
-
-// Klick auf X schließt Modal
-document.querySelectorAll('.modal-close').forEach(btn => {
-  btn.addEventListener('click', () => {
-    closeModal();
-  });
-});
-
-// Klick außerhalb Modal schließt auch
-window.addEventListener('click', e => {
-  if (e.target.classList.contains('modal')) {
-    closeModal();
-  }
-});
-
-</script>
-
-<script>
-document.querySelectorAll('.filter-item').forEach(button => {
-    button.addEventListener('click', () => {
-
-        document.querySelectorAll('.filter-item').forEach(btn =>
-            btn.classList.remove('active')
-        );
-        button.classList.add('active');
-
-        document.querySelectorAll('.category-group').forEach(group =>
-            group.classList.remove('active')
-        );
-
-        const target = button.getAttribute('data-target');
-        document.getElementById(target).classList.add('active');
-    });
-});
-</script>
 
 </body>
 </html>
