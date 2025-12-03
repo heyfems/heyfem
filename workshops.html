@@ -155,16 +155,17 @@
 
     .slide h3{ font-size:30px; margin:0 0 12px; font-weight:800; }
     .slide p{ margin:0 0 18px; color:#2d2d2d; line-height:1.5; font-size:16px; }
-    .slide .cta{
-      display:inline-block;
-      padding:10px 18px;
-      border-radius:28px;
-      background:#fff;
-      border:none;
-      font-weight:700;
-      cursor:pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
+    .slide .cta {
+    display:inline-block;
+    padding:10px 28px;
+    border-radius:999px;
+    background:transparent;
+    border:2px solid currentColor;
+    font-weight:700;
+    cursor:pointer;
+    transition: all .2s ease;
+    font-size:16px;
+}
 
     /* Colors for the 6 slides */
     .slide.slide-1{ background: #FFD324; } /* gelb */
@@ -173,6 +174,14 @@
     .slide.slide-4{ background: #D6F6DD; } /* grün pastell */
     .slide.slide-5{ background: #D9EEFF; } /* blau pastell */
     .slide.slide-6{ background: #FFE6CC; } /* orange/peach */
+
+    /* Button-Farben je Slide */
+    .slide-1 .cta { color: #B68F00; border-color: #B68F00; }   /* Gelb intensiver */
+    .slide-2 .cta { color: #D1638F; border-color: #D1638F; }   /* Rosa Akzent */
+    .slide-3 .cta { color: #fff; border-color: #fff; }         /* Weiß auf dunkel */
+    .slide-4 .cta { color: #3D9160; border-color: #3D9160; }   /* Grün Akzent */
+    .slide-5 .cta { color: #2F7FB5; border-color: #2F7FB5; }   /* Blau Akzent */
+    .slide-6 .cta { color: #E0954A; border-color: #E0954A; }   /* Orange Akzent */
 
     /* adjust text color for dark slide */
     .slide-3 h3, .slide-3 p, .slide-3 .cta{ color:#fff; }
