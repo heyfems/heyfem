@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Über uns | Behind My Profile</title>
 
-    <link rel="icon" href="bilder/heyfem.logos1.png" type="image/png">
-<link rel="apple-touch-icon" href="bilder/heyfem.logos1.png">
-<meta property="og:image" content="https://www.heyfem.org/bilder/heyfem.logos1.png">
-<meta property="og:title" content="Behind My Profile – Jugend stärken. Zukunft stärken.">
-<meta property="og:description" content="Eine Initiative für Prävention, Bildung und Empowerment.">
+  <link rel="icon" href="bilder/heyfem.logos1.png" type="image/png">
+  <link rel="apple-touch-icon" href="bilder/heyfem.logos1.png">
+  <meta property="og:image" content="https://www.heyfem.org/bilder/heyfem.logos1.png">
+  <meta property="og:title" content="Behind My Profile – Jugend stärken. Zukunft stärken.">
+  <meta property="og:description" content="Eine Initiative für Prävention, Bildung und Empowerment.">
 
   <style>
     body {
@@ -20,12 +20,13 @@
       line-height: 1.6;
     }
 
+    /* HEADER wie Workshops */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: white;
-      padding: 00px 40px;
+      padding: 0px 40px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
@@ -55,23 +56,27 @@
       color: #E07BAE;
     }
 
+    /* CONTENT */
     .content {
       max-width: 900px;
       margin: 80px auto;
       padding: 0 30px;
     }
 
+    /* H1 wie Workshop-Titel */
     h1 {
       color: #333;
-      font-size: 36px;
+      font-size: 36px; /* gleiche Größe wie Workshop-Überschriften */
       text-align: center;
       margin-bottom: 40px;
+      font-weight: 600;
     }
 
     h2 {
       color: #333;
       margin-top: 50px;
       font-size: 24px;
+      font-weight: 600;
     }
 
     p {
@@ -83,11 +88,13 @@
     ul {
       margin-left: 20px;
       color: #333;
+      font-size: 17px;
     }
 
+    /* FOOTER wie Workshops */
     footer {
-      background-color: #f9f9f9;
-      padding: 60px 100px 30px;
+      background-color: #fff;
+      padding: 50px 80px 20px;
       font-family: Arial, sans-serif;
       color: #333;
       border-top: 1px solid #eee;
@@ -95,18 +102,14 @@
 
     .footer-container {
       display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 40px;
-      align-items: start;
-    }
-
-    .footer-logo img {
-      width: 180px;
-      height: auto;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .footer-column h4 {
-      font-size: 18px;
+      font-size: 17px;
       margin-bottom: 15px;
       font-weight: 700;
       color: #333;
@@ -115,6 +118,7 @@
     .footer-column ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     .footer-column ul li {
@@ -124,6 +128,7 @@
     .footer-column ul li a {
       text-decoration: none;
       color: #E07BAE;
+      font-size: 15px;
       transition: color 0.3s;
     }
 
@@ -132,8 +137,24 @@
     }
 
     .footer-bottom {
-        font-size: 12px;
-        margin-top: 20px;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      header {
+        padding: 0 20px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -155,24 +176,29 @@
     </nav>
   </header>
 
-  <!-- INHALT -->
+  <!-- INHALT (ALLE TEXTE 1:1 ÜBERNOMMEN) -->
   <div class="content">
     <h1>Über uns</h1>
 
     <h2>Was ist Behind My Profile?</h2>
-    <p><a href="https://de.statista.com/themen/2662/mediennutzung-von-jugendlichen/" target="_blank" rel="noopener noreferrer">
-      Rund <strong>93 % der Jugendlichen in Deutschland (12–19 Jahre)</strong> 
-    </a>
-    nutzen ihr Smartphone täglich, über <strong>90 % verwenden regelmäßig Social Media.</strong> 
-    Laut der 
-    <a href="https://www.dak.de/presse/bundesthemen/kinder-jugendgesundheit/dak-suchtstudie-millionen-kinder-haben-probleme-durch-medienkonsum-_91832" target="_blank" rel="noopener noreferrer">
-    Studie „Ohne Ende Online?!“ der DAK und des UKE
-    </a> 
-    zeigt mehr als ein Viertel der 10‑ bis 17-Jährigen einen riskanten oder krankhaften Medienkonsum, <strong>4,7 % gelten als süchtig</strong> – das sind insgesamt etwa <strong>1,3 Millionen Kinder und Jugendliche.</strong></p>
+    <p>
+      <a href="https://de.statista.com/themen/2662/mediennutzung-von-jugendlichen/" target="_blank" rel="noopener noreferrer">
+        Rund <strong>93 % der Jugendlichen in Deutschland (12–19 Jahre)</strong>
+      </a>
+      nutzen ihr Smartphone täglich, über <strong>90 % verwenden regelmäßig Social Media.</strong>
+      Laut der
+      <a href="https://www.dak.de/presse/bundesthemen/kinder-jugendgesundheit/dak-suchtstudie-millionen-kinder-haben-probleme-durch-medienkonsum-_91832" target="_blank" rel="noopener noreferrer">
+        Studie „Ohne Ende Online?!“ der DAK und des UKE
+      </a>
+      zeigt mehr als ein Viertel der 10- bis 17-Jährigen einen riskanten oder krankhaften Medienkonsum,
+      <strong>4,7 % gelten als süchtig</strong> – das sind insgesamt etwa <strong>1,3 Millionen Kinder und Jugendliche.</strong>
+    </p>
+
     <p><strong>Behind My Profile</strong> ist eine präventive Workshop-Serie, die altersgerechte und aktuelle Themen aus der Social-Media-Welt aufgreift. Die Workshops vermitteln jungen Menschen praxisnahes Wissen, Reflexion und Handlungskompetenzen für einen sicheren und bewussten Umgang mit digitalen Medien – basierend auf schulischer Präventions- und Bildungsarbeit.</p>
 
     <h2>Wie ist die Initiative entstanden?</h2>
     <p>Nach ihrem Psychologiestudium, einem Auslandssemester in Australien und einem Jahr als psychologische Assistenz in Costa Rica leitete Luna Lange Workshops für Kinder und Jugendliche. Dabei zeigte sich ein deutlicher Bedarf an sicheren Räumen, in denen junge Menschen über Themen wie Selbstwert, Identität, Social Media und mentale Gesundheit sprechen können – etwas, das Luna selbst in ihrer Schulzeit vermisst hat.</p>
+
     <p>In Costa Rica entwickelte und erprobte sie daraufhin erste Workshopformate, die heute die Grundlage für Behind My Profile bilden. Diese Formate werden kontinuierlich weiterentwickelt und sollen künftig an weiteren Schulen und Einrichtungen im deutschsprachigen Raum umgesetzt werden.</p>
 
     <h2>Workshops & Inhalte</h2>
@@ -188,135 +214,35 @@
 
   <!-- FOOTER -->
   <footer>
-  <div class="footer-container">
+    <div class="footer-container">
 
-    <div class="footer-column">
-      <h4>Behind My Profile</h4>
-      <ul>
-        <li><a href="überuns.html">Über uns</a></li>
-        <li><a href="workshops.html">Workshops</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
+      <div class="footer-column">
+        <h4>Behind My Profile</h4>
+        <ul>
+          <li><a href="überuns.html">Über uns</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="footer-column">
-      <h4>Rechtliches</h4>
-      <ul>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2025 Behind My Profile. Alle Rechte vorbehalten.</p>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2025 Behind My Profile. Alle Rechte vorbehalten.</p>
-  </div>
-</footer>
-
-<style>
-  footer {
-    background-color: #fff;
-    padding: 50px 80px 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-    border-top: 1px solid #eee;
-  }
-
-  .footer-container {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .footer-logo img {
-    width: 150px;
-    height: auto;
-    opacity: 0.9;
-  }
-
-  .footer-column h4 {
-    font-size: 17px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: #333;
-  }
-
-  .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-column ul li {
-    margin-bottom: 8px;
-  }
-
-  .footer-column ul li a {
-    text-decoration: none;
-    color: #E07BAE;
-    font-size: 15px;
-    transition: color 0.3s;
-  }
-
-  .footer-column ul li a:hover {
-    color: #b8528d;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid #ddd;
-    margin-top: 40px;
-    padding-top: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #777;
-  }
-
-  /* --- Mobile Anpassung --- */
-  @media (max-width: 768px) {
-    .footer-container {
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      text-align: left;
-    }
-
-    .footer-logo {
-      grid-column: span 2;
-      text-align: center;
-    }
-
-    .footer-logo img {
-      width: 120px;
-    }
-
-    .footer-bottom {
-      font-size: 12px;
-      margin-top: 25px;
-      line-height: 1.4;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .footer-container {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .footer-column {
-      margin-bottom: 20px;
-    }
-
-    .footer-bottom {
-      font-size: 12px;
-    }
-  }
-</style>
-
+  </footer>
 
 </body>
 </html>
+
 
 
 
